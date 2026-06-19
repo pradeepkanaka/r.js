@@ -1,5 +1,68 @@
 {
-    "volo": {
-        "url": "https://raw.github.com/requirejs/r.js/{version}/dist/r.js"
+  "name": "@prantlf/requirejs",
+  "description": "Node adapter for RequireJS, for loading AMD modules. Includes RequireJS optimizer. Forked to fix the source map support.",
+  "version": "3.4.0",
+  "author": "Ferdinand Prantl <prantlf@gmail.com>",
+  "contributors": [
+    "James Burke <jrburke@gmail.com> (http://github.com/jrburke)",
+    "Serge Markin <serge.n.markin@gmail.com>"
+  ],
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prantlf/r.js/blob/master/package/LICENSE"
     }
+  ],
+  "homepage": "https://github.com/prantlf/r.js#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prantlf/r.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prantlf/r.js/issues"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "main": "bin/r.js",
+  "bin": {
+    "r.js": "bin/r.js",
+    "r_js": "bin/r.js"
+  },
+  "files": [
+    "bin",
+    "require.js",
+    "require.min.js",
+    "require.min.js.map"
+  ],
+  "scripts": {
+    "prepare": "npm run require && mkdir -p bin && npm run build",
+    "require": "npm run require:minify",
+    "meriyah": "cp node_modules/meriyah/dist/meriyah.umd.js build/jslib/meriyah.js",
+    "source-map": "cp node_modules/source-map/dist/source-map.js build/jslib/",
+    "require:copy": "cp node_modules/requirejs/require.js .",
+    "require:minify": "terser -o require.min.js -cm --comments false --source-map includeSources --source-map url=require.min.js.map require.js",
+    "build": "node dist && node copydist && cp r.js bin",
+    "test": "cd tests && ./alln.sh"
+  },
+  "devDependencies": {
+    "meriyah": "^7.1.0",
+    "requirejs": "^2.3.8",
+    "serve-static": "^2.2.1",
+    "source-map": "~0.6.1",
+    "terser": "^5.46.2"
+  },
+  "keywords": [
+    "requirejs-optimizer",
+    "requirejs",
+    "require",
+    "amd",
+    "umd",
+    "r-js",
+    "optimizer"
+  ],
+  "volo": {
+    "url": "https://raw.github.com/prantlf/r.js/{version}/dist/r.js"
+  }
 }

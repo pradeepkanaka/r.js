@@ -1,4 +1,4 @@
-# @prantlf/requirejs
+# @sdinteractive/requirejs
 
 RequireJS for the browser and Node.js.
 
@@ -35,9 +35,9 @@ that combines scripts for optimal browser delivery.
 
 #### Node.js
 
-    npm i -g @prantlf/requirejs
-    pnpm i -g @prantlf/requirejs
-    yarn add -g @prantlf/requirejs
+    npm i -g @sdinteractive/requirejs
+    pnpm i -g @sdinteractive/requirejs
+    yarn add -g @sdinteractive/requirejs
 
 From then on, you can use `r.js` on the command line to run the optimizer.
 

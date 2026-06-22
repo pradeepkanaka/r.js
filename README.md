@@ -7,7 +7,7 @@ RequireJS for the browser and Node.js.
 
 More information is available at http://requirejs.org.
 
-This is a fork of the [original project](https://github.com/requirejs/r.js) with the following changes:
+Please note that this fork leverages that changes from https://github.com/prantlf/r.js
 
 * Wires up source maps of source script modules, if they include them, to the source map of the output bundle. It enables debugging of modules transpiled to JavaScript from CoffeeScript, TypeScript or from a future JavaScript transpiled by Babel.
 * Uses Meriyah instead of Esprima to support the latest standard of the JavaScript langauge by default.
